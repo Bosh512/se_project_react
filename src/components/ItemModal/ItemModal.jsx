@@ -1,0 +1,33 @@
+import "./ItemModal.css";
+import unionwhite from "../../assets/Unionwhite.svg";
+
+function ItemModal({ activeModal, handleCloseModal, card }) {
+  return (
+    <div
+      className={` item_modal ${
+        activeModal === "preview" && "item_modal_opened"
+      } `}
+    >
+      <div className="item_modal__container">
+        <button
+          onClick={handleCloseModal}
+          type="button"
+          className="item_modal__close_button"
+        >
+          <img
+            src={unionwhite}
+            alt="Unionwhite.svg"
+            className="item_modal__close_button_image"
+          />
+        </button>
+        <img src={card.link} alt="card image" className="item_modal__image" />
+        <div className="item_modal__caption_container">
+          <h2 className="item_modal__caption">{card.name}</h2>
+          <p className="item_modal__weather">Weather: {card?.weather}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default ItemModal;

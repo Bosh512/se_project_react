@@ -1,0 +1,107 @@
+.form_modal {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Cabinet Grotesk", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.form_modal__container {
+  background-color: #fff;
+  /* width: 436px;
+  height: 496px; */
+  border-radius: 12px;
+  position: relative;
+  padding: 28px 28px 36px 28px;
+}
+
+.form_modal_opened {
+  visibility: visible;
+}
+
+.form_modal__close_button {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+  border: none;
+}
+
+.form_modal__close_button:hover {
+  cursor: pointer;
+}
+
+.form_modal__close_button_image {
+  padding: 2px;
+  margin: 0;
+}
+
+.form_modal__label {
+}
+
+.form_modal__input {
+  width: 100%;
+  padding: 0;
+  margin: 8px 0 0 0;
+
+  outline: 0;
+  border-width: 0 0 1px 0;
+}
+
+.form_modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form_modal__title {
+  margin: 0 0 24px 0;
+  font-family: "Cabinet Grotesk", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.form_modal__radio-buttons {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.form_modal__legend {
+  margin: 0 0 4px 0;
+}
+
+.form_modal__label_type_radio {
+  margin: 8px 0 0 0;
+}
+
+.form_modal__submit_button {
+  margin: 8px 0 0 0;
+  padding: 0;
+  width: 124px;
+  height: 36px;
+  border-radius: 4px;
+  border: none;
+
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.form_modal__submit_button:hover {
+  cursor: pointer;
+}
