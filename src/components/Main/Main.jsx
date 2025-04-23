@@ -6,7 +6,7 @@ import ItemCard from "../ItemCard/ItemCard";
 
 function Main({ weatherData, handleCardClick }) {
   return (
-    <>
+    <main>
       <WeatherCard weatherData={weatherData} />
       <section className="cards">
         <p className="cards__text">
@@ -14,9 +14,9 @@ function Main({ weatherData, handleCardClick }) {
         </p>
         <ul className="cards__list">
           {defaultClothingItems
-            // .filter((item) => {
-            //   return item.weather === weatherData.type;
-            // })
+            .filter((item) => {
+              return item.weather === weatherData.type;
+            })
             .map((item) => {
               return (
                 <ItemCard
@@ -28,7 +28,7 @@ function Main({ weatherData, handleCardClick }) {
             })}
         </ul>
       </section>
-    </>
+    </main>
   );
 }
 

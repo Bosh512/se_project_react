@@ -53,7 +53,7 @@ function App() {
       <ModalWithForm
         buttonText="Add garment"
         title="New garment"
-        activeModal={activeModal}
+        isOpen={activeModal === "add-garment"}
         handleCloseModal={closeActiveModal}
       >
         <label htmlFor="nameText" className="form_modal__label">
@@ -83,6 +83,7 @@ function App() {
               id="hot"
               type="radio"
               className="form_modal__input_type_radio"
+              name="radioButtonInput"
             />{" "}
             Hot
           </label>
@@ -91,6 +92,7 @@ function App() {
               id="warm"
               type="radio"
               className="form_modal__input_type_radio"
+              name="radioButtonInput"
             />{" "}
             Warm
           </label>
@@ -99,6 +101,7 @@ function App() {
               id="cold"
               type="radio"
               className="form_modal__input_type_radio"
+              name="radioButtonInput"
             />{" "}
             Cold
           </label>
