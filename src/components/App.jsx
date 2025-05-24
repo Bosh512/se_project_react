@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
+import { coordinates, APIkey } from "../utils/constants";
+import { defaultClothingItems } from "../utils/constants";
+import { Routes, Route } from "react-router-dom";
+import { getWeatherData, filterWeatherData } from "../utils/weatherApi";
 
 import "./App.css";
-import { coordinates, APIkey } from "../utils/constants";
+
 import Header from "./Header/Header";
 import Main from "./Main/Main";
 import Footer from "./Footer/Footer";
 import ModalWithForm from "./ModalWithForm/ModalWithForm";
 import ItemModal from "./ItemModal/ItemModal";
-import { getWeatherData, filterWeatherData } from "../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
 import AddItemModal from "./AddItemModal/AddItemModal";
-import { defaultClothingItems } from "../utils/constants";
+import Profile from "./Profile/Profile";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -70,11 +73,31 @@ function App() {
             handleAddButtonClick={handleAddButtonClick}
             weatherData={weatherData}
           />
-          <Main
-            weatherData={weatherData}
-            handleCardClick={handleCardClick}
-            clothingItems={clothingItems}
-          />
+
+          <Routes>
+            <Route
+              path="/se_project_react/"
+              element={
+                <Main
+                  weatherData={weatherData}
+                  handleCardClick={handleCardClick}
+                  clothingItems={clothingItems}
+                />
+              }
+            />
+            <Route
+              path="/se_project_react/profile"
+              element={
+                <Profile
+                  weatherData={weatherData}
+                  onCardClick={handleCardClick}
+                  clothingItems={clothingItems}
+                  handleAddButtonClick={handleAddButtonClick}
+                />
+              }
+            />
+          </Routes>
+
           <Footer />
         </div>
         <AddItemModal

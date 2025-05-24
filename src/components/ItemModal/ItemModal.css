@@ -64,3 +64,27 @@
 
   margin: 12px 0 32px 32px;
 }
+
+.item_modal__caption_container {
+  display: flex;
+}
+
+.item_modal__delete_button {
+  font-family: "Cabinet Grotesk", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #ff4d00;
+
+  padding: 0;
+  margin: 20px 32px 0 204px;
+
+  height: 24px;
+  width: auto;
+  border: none;
+  background-color: white;
+}
+
+.item_modal__delete_button:hover {
+  cursor: pointer;
+}

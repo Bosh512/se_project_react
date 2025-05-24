@@ -22,8 +22,11 @@ function ItemModal({ activeModal, handleCloseModal, card }) {
         </button>
         <img src={card.link} alt="card image" className="item_modal__image" />
         <div className="item_modal__caption_container">
-          <h2 className="item_modal__caption">{card.name}</h2>
-          <p className="item_modal__weather">Weather: {card?.weather}</p>
+          <div className="item_modal__caption_sub_container">
+            <h2 className="item_modal__caption">{card.name}</h2>
+            <p className="item_modal__weather">Weather: {card?.weather}</p>
+          </div>
+          <button className="item_modal__delete_button">Delete Item</button>
         </div>
       </div>
     </div>
