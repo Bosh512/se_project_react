@@ -1,6 +1,6 @@
 const baseUrl = "http://localhost:3001";
 
-const response = (res) => {
+const handleResponse = (res) => {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
 };
 
@@ -9,7 +9,7 @@ const headers = {
 };
 
 function getItems() {
-  return fetch(`${baseUrl}/items`).then(response);
+  return fetch(`${baseUrl}/items`).then(handleResponse);
 }
 
 function addItems(name, imageUrl, weather) {
@@ -21,14 +21,14 @@ function addItems(name, imageUrl, weather) {
       imageUrl,
       weather,
     }),
-  }).then(response);
+  }).then(handleResponse);
 }
 
 function deleteItems(_id) {
   return fetch(`${baseUrl}/items/${_id}`, {
     method: "DELETE",
     headers: headers,
-  }).then(response);
+  }).then(handleResponse);
 }
 
 export { getItems, addItems, deleteItems };

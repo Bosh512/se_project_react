@@ -101,22 +101,6 @@
       "name": "T-Shirt",
       "weather": "hot",
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/T-Shirt.png?etag=44ed1963c44ab19cd2f5011522c5fc09"
-    },
-    {
-      "name": {
-        "name": "rick",
-        "imageUrl": "https://media-assets.grailed.com/prd/listing/temp/0e35eea1e7324a5681e00bea709556b6?w=1500",
-        "weather": "warm"
-      },
-      "_id": 17
-    },
-    {
-      "name": {
-        "name": "asd",
-        "imageUrl": "https://media-assets.grailed.com/prd/listing/temp/0e35eea1e7324a5681e00bea709556b6?w=1500",
-        "weather": "warm"
-      },
-      "_id": 18
     }
   ]
 }
