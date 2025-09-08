@@ -1,7 +1,20 @@
 import "./ItemModal.css";
 import unionwhite from "../../assets/Unionwhite.svg";
 
-function ItemModal({ activeModal, handleCloseModal, card, onCardDelete }) {
+function ItemModal({
+  activeModal,
+  handleCloseModal,
+  card,
+  onCardDelete,
+  currentUser,
+  onCardLike,
+}) {
+  const isOwn = currentUser.userData && card.owner === currentUser.userData._id;
+
+  const handleLike = (data) => {
+    onCardLike(data);
+  };
+
   return (
     <div
       className={` item_modal ${
@@ -30,12 +43,14 @@ function ItemModal({ activeModal, handleCloseModal, card, onCardDelete }) {
             <h2 className="item_modal__caption">{card.name}</h2>
             <p className="item_modal__weather">Weather: {card?.weather}</p>
           </div>
-          <button
-            className="item_modal__delete_button"
-            onClick={() => onCardDelete(card._id)}
-          >
-            Delete Item
-          </button>
+          {isOwn && (
+            <button
+              className="item_modal__delete_button"
+              onClick={() => onCardDelete(card._id)}
+            >
+              Delete Item
+            </button>
+          )}
         </div>
       </div>
     </div>

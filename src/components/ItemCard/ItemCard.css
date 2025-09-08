@@ -13,10 +13,6 @@
 }
 
 .card__name {
-  top: 15px;
-  margin: 0;
-  position: absolute;
-
   box-sizing: border-box;
   background-color: #fff;
   padding: 2px 15px 2px 15px;
@@ -31,4 +27,19 @@
 
 .card__image {
   width: 100%;
+}
+
+.card__container {
+  margin: 0;
+  position: absolute;
+  display: flex;
+}
+
+.card__like-button {
+  margin: 15px 0 0 10px;
+  padding: 0;
+  height: 15px;
+  width: 18px;
+  border-color: transparent;
+  background-color: transparent;
 }

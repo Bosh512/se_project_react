@@ -53,6 +53,28 @@
   width: 40px;
 }
 
+.header__avatar_display {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(100, 100, 100, 0.5);
+  background-color: rgba(100, 100, 100, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__avatar_display_text {
+  margin: 0;
+  padding: 0;
+
+  color: #fff;
+  font-family: "Cabinet Grotesk", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+}
+
 .header__link {
   text-decoration: none;
   color: black;

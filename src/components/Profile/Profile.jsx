@@ -8,11 +8,19 @@ function Profile({
   onCardClick,
   weatherData,
   clothingItems,
+  currentUser,
+  handleLogOut,
+  onEditClick,
+  onCardLike,
 }) {
   return (
     <div className="profile">
       <section className="profile__sidebar">
-        <SideBar />
+        <SideBar
+          currentUser={currentUser}
+          handleLogOut={handleLogOut}
+          handleEditClick={onEditClick}
+        />
       </section>
       <section className="profile__clothes-section">
         <ClothesSection
@@ -20,6 +28,8 @@ function Profile({
           weatherData={weatherData}
           clothingItems={clothingItems}
           handleAddButtonClick={handleAddButtonClick}
+          onCardLike={onCardLike}
+          currentUser={currentUser}
         />
       </section>
     </div>

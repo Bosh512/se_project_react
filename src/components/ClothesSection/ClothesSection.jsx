@@ -10,6 +10,8 @@ function ClothesSection({
   onCardClick,
   weatherData,
   clothingItems,
+  onCardLike,
+  currentUser,
 }) {
   return (
     <div className="clothes-section">
@@ -26,15 +28,17 @@ function ClothesSection({
       <div>
         <ul className="clothes-section__items">
           {clothingItems
-            // .filter((item) => {
-            //   return item.weather === weatherData.type;
-            // })
+            .filter((item) => {
+              return item.owner === currentUser.userData._id;
+            })
             .map((item) => {
               return (
                 <ItemCard
                   key={item._id}
                   item={item}
                   onCardClick={onCardClick} //handleCardClick
+                  onCardLike={onCardLike}
+                  currentUser={currentUser}
                 />
               );
             })}
