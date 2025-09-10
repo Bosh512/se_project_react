@@ -11,7 +11,6 @@ function ItemCard({ item, onCardClick, onCardLike, currentUser }) {
   };
 
   const handleLike = ({ item, isLiked }) => {
-    console.log(item);
     onCardLike({ _id: item._id, isLiked });
   };
 
@@ -19,20 +18,21 @@ function ItemCard({ item, onCardClick, onCardLike, currentUser }) {
     <li className="card">
       <div className="card__container">
         <h2 className="card__name">{item.name}</h2>
-        <button
-          type="button"
-          className="card__like-button"
-          onClick={() => {
-            handleLike({ item, isLiked });
-          }}
-        >
-          <img
-            className="card__like-button_image"
-            src={isLiked ? heart : heart1}
-            alt="!PLACEHOLDER!"
-          />
-          {/* <img src={heart1} alt="heart1" /> */}
-        </button>
+        {currentUser.isLoggedIn && (
+          <button
+            type="button"
+            className="card__like-button"
+            onClick={() => {
+              handleLike({ item, isLiked });
+            }}
+          >
+            <img
+              className="card__like-button_image"
+              src={isLiked ? heart : heart1}
+              alt="!PLACEHOLDER!"
+            />
+          </button>
+        )}
       </div>
       <img
         onClick={() => {

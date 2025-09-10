@@ -25,13 +25,15 @@ function Header({
         {currentDate}, {weatherData.city}
       </p>
       <ToggleSwitch />
-      <button
-        onClick={handleAddButtonClick}
-        type="button"
-        className="header__button"
-      >
-        + Add Clothes
-      </button>
+      {currentUser.isLoggedIn && (
+        <button
+          onClick={handleAddButtonClick}
+          type="button"
+          className="header__button"
+        >
+          + Add Clothes
+        </button>
+      )}
       {!currentUser.isLoggedIn && (
         <>
           <button

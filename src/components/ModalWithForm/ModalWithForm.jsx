@@ -1,6 +1,5 @@
 import "./ModalWithForm.css";
 import union from "../../assets/Union.svg";
-import { Children } from "react";
 
 function ModalWithForm({
   children,

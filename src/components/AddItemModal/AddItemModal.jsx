@@ -1,15 +1,11 @@
 import "./AddItemModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import { useForm } from "../../hooks/useForm";
 import { useState, useEffect } from "react";
 
 function AddItemModal({ isOpen, handleCloseModal, onAddItemModalSubmit }) {
   const [name, setName] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [weather, setWeather] = useState("");
-  // const { values, handleChange, setValues } = useForm({});
-  // I made at attempt at implementing a hook for input handling and could not figure it out.
-  // For the sake of time restraints I opted to continue with the code that works and is only a suggestion to alter.
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -27,7 +23,7 @@ function AddItemModal({ isOpen, handleCloseModal, onAddItemModalSubmit }) {
     setName("");
     setImageUrl("");
     setWeather("");
-  }, [isOpen]); // watch the opening state
+  }, [isOpen]);
 
   const handleSubmit = (event) => {
     event.preventDefault();

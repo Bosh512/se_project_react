@@ -39,7 +39,7 @@ function App() {
     type: "",
     temp: { F: 999, C: 999 },
     city: "",
-    condtion: "",
+    condition: "",
     isDay: false,
   });
   const [activeModal, setActiveModal] = useState("");
@@ -82,10 +82,6 @@ function App() {
     setSelectedCard(card);
   };
 
-  const generateUniqueId = () => {
-    return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
-  };
-
   const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
     addItems(name, imageUrl, weather)
       .then((newItem) => {
@@ -96,7 +92,6 @@ function App() {
   };
 
   const handleCardDelete = async (_id) => {
-    console.log("Delete function called with ID:", _id);
     try {
       await deleteItems(_id);
       setClothingItems((items) => items.filter((item) => item._id !== _id));
@@ -196,28 +191,20 @@ function App() {
   };
 
   const handleCardLike = ({ _id, isLiked }) => {
-    // const token = localStorage.getItem("jwt");
     const jwt = getToken();
-    // Check if this card is not currently liked
     !isLiked
-      ? // if so, send a request to add the user's id to the card's likes array
-        // the first argument is the card's id
-        addCardLike(_id)
+      ? addCardLike(_id)
           .then((updatedCard) => {
             setClothingItems((cards) =>
               cards.map((item) => (item._id === _id ? updatedCard : item))
             );
-            console.log("card liked");
           })
           .catch((err) => console.log(err))
-      : // if not, send a request to remove the user's id from the card's likes array
-        // the first argument is the card's id
-        removeCardLike(_id)
+      : removeCardLike(_id)
           .then((updatedCard) => {
             setClothingItems((cards) =>
               cards.map((item) => (item._id === _id ? updatedCard : item))
             );
-            console.log("card unliked");
           })
           .catch((err) => console.log(err));
   };

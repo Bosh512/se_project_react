@@ -24,6 +24,10 @@ function LoginModal({ onLogIn, isOpen, handleCloseModal, onSignUpClick }) {
   const handleLogInSubmit = (e) => {
     e.preventDefault();
     onLogIn(data);
+    setData({
+      email: "",
+      password: "",
+    });
   };
 
   return (

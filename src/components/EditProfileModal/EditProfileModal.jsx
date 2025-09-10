@@ -10,15 +10,15 @@ function EditProfileModal({
   setCurrentUser,
 }) {
   const [data, setData] = useState({
-    name: currentUser?.name || "",
-    avatar: currentUser?.avatar || "",
+    name: currentUser.userData?.name || "",
+    avatar: currentUser.userData?.avatar || "",
   });
 
   useEffect(() => {
     if (currentUser) {
       setData({
-        name: currentUser.name || "",
-        avatar: currentUser.avatar || "",
+        name: currentUser.userData?.name || "",
+        avatar: currentUser.userData?.avatar || "",
       });
     }
   }, [currentUser]);
