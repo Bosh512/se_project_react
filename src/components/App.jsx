@@ -118,19 +118,6 @@ function App() {
       .catch(console.error);
   }, []);
 
-  const handleRegistration = (data) => {
-    registration(data)
-      .then((newUser) => {
-        setCurrentUser({
-          isLoggedIn: true,
-          userData: newUser,
-        });
-        navigate("/profile");
-        closeActiveModal();
-      })
-      .catch(console.error);
-  };
-
   useEffect(() => {
     const jwt = getToken();
 
@@ -161,6 +148,41 @@ function App() {
       })
       .catch(console.error);
   };
+
+  const handleRegistration = (data) => {
+    registration(data)
+      .then((newUser) => {
+        console.log("Full registration response:", newUser);
+        localStorage.setItem("jwt", newUser.token);
+        console.log("Token from registration:", newUser.token); // Add this line
+        getUserInfo(newUser.token).then((newUser) => {
+          setCurrentUser({
+            isLoggedIn: true,
+            userData: newUser,
+          });
+        });
+        navigate("/profile");
+        closeActiveModal();
+      })
+      .catch(console.error);
+  };
+
+  // const handleRegistration = (data) => {
+  //   registration(data)
+  //     .then((newUser) => {
+  //       localStorage.setItem("jwt", newUser.token);
+  //       getUserInfo(newUser.token); // Fetch full user data
+  //     })
+  //     .then((userData) => {
+  //       setCurrentUser({
+  //         isLoggedIn: true,
+  //         userData,
+  //       });
+  //       navigate("/profile");
+  //       closeActiveModal();
+  //     })
+  //     .catch(console.error);
+  // };
 
   const handleLogIn = (data) => {
     authorization(data)
