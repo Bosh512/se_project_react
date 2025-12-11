@@ -12,15 +12,24 @@ There is a demonstration video that goes into full lengths of the sites function
 
 The front end of this project was created using React, HTML, and CSS. The HTML components, linked to CSS stylesheets, were broken down into seperate React components to ensure clean code and an overall more organized project, which will aid developement to add future fucntionality to the project.
 
-The back end of this project was created using Express.js. A server was run using scripts that allowed for the use of a local server, so that we could effectively and efficiently test all API endpoints and their associated functions in the application. MongoDB and Postman were also used to test these endpoints.
+This project was constructed using Express.js, a flexible Node.js application specifically designed to handle back end applications and requests. The Postman and MondoDB Compass applications were also used to test the various functions of the software. Several other minor softwares such as EsLint and Prettier were also used to ensure that the code was consice and consistent. MongoDB and Postman were also used to test these endpoints. We used a local server on my local machine to create the project initially, and then proceeded with a virtual machine.
 
-We use "npm run dev" on both the front and back ends to launch the server with the hot reload feature for ease of use purposes.
+I also utilized Google Cloud services to run a virtual machine, onto which I transferred the project so that it could be connected to a domain. I used freedns.afraid.org to set up the domain names and connect them to the project. We used tome basic softwares like pm2 and nginx in conjuction with our virtual machine.
 
-A link to the back end is below.
+We use "npm run dev" on both the front and back ends to launch the server with the hot reload feature for ease of use purposes. We also use "npm start" to launch the project on the vm.
+
+## Videos
+
+Here are a couple videos of me pitching my project, and demonstrating its functionality.
+
+-   [Demo Video](https://drive.google.com/file/d/1XO9fmdQrscRcFxMwV7UBOmQp8CbkVV6V/view?usp=sharing)
+-   [Pitch Video](https://drive.google.com/file/d/1t9mmWnIuasQmGugOHnpAUkV2Pe1z1cwE/view?usp=sharing)
 
 ## Links
 
-- [Figma Design](https://www.figma.com/file/DTojSwldenF9UPKQZd6RRb/Sprint-10%3A-WTWR)
-- [Github Pages](https://Bosh512.github.io/se_project_react/)
-- [Backend](https://github.com/Bosh512/se_project_express)
-- [Demo](https://drive.google.com/file/d/1XO9fmdQrscRcFxMwV7UBOmQp8CbkVV6V/view?usp=sharing)
+-   [Project](wtwrbosh512.jumpingcrab.com)
+-   [Figma Design](https://www.figma.com/file/DTojSwldenF9UPKQZd6RRb/Sprint-10%3A-WTWR)
+-   [Github Pages](https://Bosh512.github.io/se_project_react/)
+-   [Backend](https://github.com/Bosh512/se_project_express)
+-   [Demo Video](https://drive.google.com/file/d/1XO9fmdQrscRcFxMwV7UBOmQp8CbkVV6V/view?usp=sharing)
+-   [Pitch Video](https://drive.google.com/file/d/1t9mmWnIuasQmGugOHnpAUkV2Pe1z1cwE/view?usp=sharing)
